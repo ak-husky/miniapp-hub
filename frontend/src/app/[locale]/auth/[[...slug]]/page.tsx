@@ -41,7 +41,7 @@ export default function AuthPage() {
 
       const targetUrl = new URL(env('NEXT_PUBLIC_TARGET_URL')!);
       targetUrl.searchParams.set('auth', data.token);
-      targetUrl.searchParams.set('target', path)
+      targetUrl.searchParams.set('target', path);
 
       const u = new URL(`http://localhost/${locale}`);
       u.searchParams.set('targetUrl', targetUrl.href);

@@ -16,7 +16,7 @@ export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesN
 
 export const getServerMessages = async (locale: string) => {
   let messages;
-  console.log(`-------`, locale)
+  console.log(`-------`, locale);
   try {
     messages = (await import(`./locales/${locale}.json`)).default;
   } catch (error) {

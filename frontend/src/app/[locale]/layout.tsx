@@ -3,8 +3,8 @@ import { Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import { PublicEnvScript } from 'next-runtime-env';
-import { SDKProvider } from '@tma.js/sdk-react';
 import { getServerMessages, locales } from '@/i18n';
+import { Providers } from './providers';
 
 type Props = React.PropsWithChildren<{ params: { locale: string } }>;
 
@@ -17,11 +17,9 @@ export default async function RootLayout({ children, params: { locale } }: Props
         <PublicEnvScript />
       </head>
       <body>
-        <SDKProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </SDKProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Providers>{children}</Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
