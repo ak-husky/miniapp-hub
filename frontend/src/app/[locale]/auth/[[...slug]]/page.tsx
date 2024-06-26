@@ -39,7 +39,7 @@ export default function AuthPage() {
         locale = defaultLocale;
       }
 
-      const targetUrl = new URL(env('NEXT_PUBLIC_TARGET_URL') ?? 'https://test0413-game.16z.net/test1');
+      const targetUrl = new URL(env('NEXT_PUBLIC_TARGET_URL') ?? 'https://test0413-game.16z.net/test1/');
       targetUrl.searchParams.set('auth', data.token);
       targetUrl.searchParams.set('target', path);
 
