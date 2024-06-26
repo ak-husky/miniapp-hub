@@ -1,0 +1,33 @@
+{
+	"name": "miniapp-hub",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"build:frontend": "turbo run build --filter=frontend...",
+		"dev": "turbo run dev --parallel --no-cache",
+		"lint": "turbo run lint --parallel --no-cache",
+		"lint:fix": "turbo run lint:fix --parallel --no-cache",
+		"format": "turbo run format --parallel --no-cache",
+		"format:write": "turbo run format:write --parallel --no-cache",
+		"generate-change-log": "pnpx gitmoji-changelog",
+		"prepare": "husky install"
+	},
+	"workspaces": [
+		"backend",
+		"frontend"
+	],
+	"devDependencies": {
+		"husky": "^8.0.3",
+		"turbo": "1.9.9"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "turbo run lint"
+		}
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"packageManager": "pnpm@8.1.0"
+}

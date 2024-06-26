@@ -1,0 +1,13 @@
+import { createTRPCReact } from '@trpc/react-query';
+import { AppRouter } from '@/server/router';
+
+export const trpc = createTRPCReact<AppRouter>({
+  overrides: {
+    useMutation: {
+      async onSuccess(opts) {
+        await opts.originalFn();
+        await opts.queryClient.invalidateQueries();
+      },
+    },
+  },
+});

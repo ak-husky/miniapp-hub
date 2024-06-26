@@ -1,0 +1,38 @@
+{
+  "baseBranch": "origin/main",
+  "globalDotEnv": [
+    ".env"
+  ],
+  "pipeline": {
+    "dev": {
+      "dependsOn": [
+        "^dev"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "dist/**",
+        "public/__ENV.js"
+      ],
+      "outputMode": "new-only",
+      "dotEnv": [
+        ".env"
+      ]
+    },
+    "test": {
+      "dependsOn": [
+        "lint",
+        "build"
+      ]
+    },
+    "lint": {},
+    "lint:fix": {},
+    "format": {},
+    "format:write": {}
+  }
+}
