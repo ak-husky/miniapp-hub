@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 export default function Page() {
   const searchParams = useSearchParams();
   const url = searchParams.get('targetUrl');
+  console.log('66666666', url)
   return (
     <>
       <main className="flex min-h-screen h-screen">
