@@ -30,32 +30,23 @@ export default function AuthPage() {
 
   useEffect(() => {
     if (isSuccess && data.token && miniApp) {
-      console.log(`11111111`)
       const { initData } = launchParams;
       const routeTo = pathname.substring(pathname.indexOf('/auth') + 5);
       const path = (routeTo ?? '/') + (initData?.startParam ?? '');
 
-      console.log(`2222222`)
       let locale = initData?.user?.languageCode ?? '';
       if (!locales.includes(locale)) {
         locale = defaultLocale;
       }
 
-      console.log(`3333333`)
-      console.log(`3333333 -0`, env('NEXT_PUBLIC_TARGET_URL'))
-      const targetUrl = new URL(env('NEXT_PUBLIC_TARGET_URL')!);
-      console.log(`3333333 -1`, data.token)
+      const targetUrl = new URL(env('NEXT_PUBLIC_TARGET_URL') ?? 'https://test0413-game.16z.net/test1');
       targetUrl.searchParams.set('auth', data.token);
-      console.log(`3333333 -2`, path)
       targetUrl.searchParams.set('target', path);
-      console.log(`3333333 -3`)
 
-      console.log(`4444444`)
       const u = new URL(`http://localhost/${locale}`);
       u.searchParams.set('targetUrl', targetUrl.href);
       router.replace(u.pathname + u.search);
 
-      console.log(`55555555`)
       miniApp.ready();
       viewport?.expand();
 
