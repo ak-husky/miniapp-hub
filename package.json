@@ -11,7 +11,6 @@
 		"format": "turbo run format --parallel --no-cache",
 		"format:write": "turbo run format:write --parallel --no-cache",
 		"generate-change-log": "pnpx gitmoji-changelog",
-		"prepare": "husky install"
 	},
 	"workspaces": [
 		"backend",
@@ -20,11 +19,6 @@
 	"devDependencies": {
 		"husky": "^8.0.3",
 		"turbo": "1.9.9"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "turbo run lint"
-		}
 	},
 	"engines": {
 		"node": ">=18.0.0"
