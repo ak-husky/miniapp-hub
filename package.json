@@ -10,7 +10,7 @@
 		"lint:fix": "turbo run lint:fix --parallel --no-cache",
 		"format": "turbo run format --parallel --no-cache",
 		"format:write": "turbo run format:write --parallel --no-cache",
-		"generate-change-log": "pnpx gitmoji-changelog",
+		"generate-change-log": "pnpx gitmoji-changelog"
 	},
 	"workspaces": [
 		"backend",
