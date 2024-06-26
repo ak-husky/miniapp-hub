@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import { PublicEnvScript } from 'next-runtime-env';
 import { getServerMessages, locales } from '@/i18n';
-import { Providers } from './providers';
+import { Providers } from '@/providers';
 
 type Props = React.PropsWithChildren<{ params: { locale: string } }>;
 
