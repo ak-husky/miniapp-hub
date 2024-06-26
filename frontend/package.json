@@ -4,12 +4,12 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "dev": "dotenv -e ./.env -e ../../.env -- next dev",
-    "build": "dotenv -e ./.env -e ../../.env -- next build",
+    "dev": "dotenv -e ./.env -- next dev",
+    "build": "dotenv -e ./.env -- next build",
     "build:css": "cross-env NODE_ENV=production tailwindcss -o public/tailwind.css -m",
-    "start": "dotenv -e ./.env -e ../../.env -- next start",
-    "lint": "dotenv -e ./.env -e ../../.env -- next lint",
-    "lint:fix": "dotenv -e ./.env -e ../../.env -- next lint --fix",
+    "start": "dotenv -e ./.env -- next start",
+    "lint": "dotenv -e ./.env -- next lint",
+    "lint:fix": "dotenv -e ./.env -- next lint --fix",
     "format": "prettier --check \"**/*.{ts,tsx,jsx,js,mjs}\"",
     "format:write": "prettier --write \"**/*.{ts,tsx,jsx,js,mjs}\""
   },
